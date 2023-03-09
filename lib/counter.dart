@@ -10,7 +10,7 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  StateWidgetState get state => StateInheritedWidget.of(context);
+  StateWidgetState get stateWidget => StateInheritedWidget.of(context);
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +20,12 @@ class _CounterState extends State<Counter> {
       ),
       body: Center(
         child: Text(
-          '${state.counter}',
+          '${stateWidget.state.counter}',
           style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: state.incrementCounter,
+        onPressed: stateWidget.incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

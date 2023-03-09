@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:inherited_widget/counter.dart';
+import 'package:inherited_widget/counter/counter.dart';
 import 'package:inherited_widget/state/state_widget.dart';
 
 void main() {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:inherited_widget/state/state_inherited_widget.dart';
+import 'package:inherited_widget/state/state_widget_state.dart';
 
 class Counter extends StatefulWidget {
   const Counter({super.key});
@@ -8,13 +10,7 @@ class Counter extends StatefulWidget {
 }
 
 class _CounterState extends State<Counter> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  StateWidgetState get state => StateInheritedWidget.of(context);
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +20,12 @@ class _CounterState extends State<Counter> {
       ),
       body: Center(
         child: Text(
-          '$_counter',
+          '${state.counter}',
           style: Theme.of(context).textTheme.headlineMedium,
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: state.incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

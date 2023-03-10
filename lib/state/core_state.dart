@@ -1,26 +1,13 @@
-class CoreState {
-  final int counter;
+import 'package:flutter/material.dart';
 
-  const CoreState({
-    this.counter = 0,
-  });
+class CoreState extends ChangeNotifier {
+  int _count = 0;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        other is CoreState &&
-            runtimeType == other.runtimeType &&
-            counter == other.counter;
-  }
+  int get counter => _count;
 
-  @override
-  int get hashCode => counter.hashCode;
+  void incrementCounter() {
+    _count++;
 
-  CoreState copy({
-    int? counter,
-  }) {
-    return CoreState(
-      counter: counter ?? this.counter,
-    );
+    notifyListeners();
   }
 }

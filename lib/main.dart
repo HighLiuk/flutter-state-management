@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inherited_widget/counter/counter.dart';
-import 'package:inherited_widget/state/state_widget.dart';
+import 'package:inherited_widget/state/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StateWidget(
+    return StateProvider(
       child: MaterialApp(
-        title: 'InheritedWidget Demo',
+        title: 'Provider Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),

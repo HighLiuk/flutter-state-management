@@ -9,7 +9,7 @@ class Counter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('InheritedWidget Demo'),
+        title: const Text('Provider Demo'),
       ),
       body: const Center(
         child: Display(),

@@ -1,25 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:inherited_widget/state/state_inherited_widget.dart';
-import 'package:inherited_widget/state/state_widget_state.dart';
+import 'package:inherited_widget/state/core_state.dart';
+import 'package:inherited_widget/state/provider.dart';
 
-class Button extends StatefulWidget {
+class Button extends StatelessWidget {
   const Button({super.key});
 
   @override
-  State<Button> createState() => _ButtonState();
-}
-
-class _ButtonState extends State<Button> {
-  StateWidgetState get provider => StateInheritedWidget.of(context);
-
-  void _incrementCounter() {
-    provider.incrementCounter();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final CoreState state = StateProvider.of(context);
+
     return FloatingActionButton(
-      onPressed: _incrementCounter,
+      onPressed: state.incrementCounter,
       tooltip: 'Increment',
       child: const Icon(Icons.add),
     );

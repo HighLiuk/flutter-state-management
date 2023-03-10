@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:inherited_widget/counter/counter.dart';
-import 'package:inherited_widget/state/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StateProvider(
+    return ProviderScope(
       child: MaterialApp(
         title: 'Provider Demo',
         theme: ThemeData(

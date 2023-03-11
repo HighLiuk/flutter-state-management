@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:inherited_widget/state/core_state.dart';
+import 'package:inherited_widget/state/provider.dart';
 
 class Display extends ConsumerWidget {
   const Display({super.key});

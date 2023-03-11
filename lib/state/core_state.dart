@@ -1,16 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+class CoreState {
+  final int counter;
 
-final provider = ChangeNotifierProvider((ref) => CoreState());
+  CoreState({
+    this.counter = 0,
+  });
 
-class CoreState extends ChangeNotifier {
-  int _count = 0;
-
-  int get counter => _count;
-
-  void incrementCounter() {
-    _count++;
-
-    notifyListeners();
-  }
+  CoreState copy({
+    int? counter,
+  }) =>
+      CoreState(
+        counter: counter ?? this.counter,
+      );
 }

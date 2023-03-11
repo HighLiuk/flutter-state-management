@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:inherited_widget/counter/counter.dart';
+import 'package:inherited_widget/state/persist.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Persist.init();
   runApp(const MyApp());
 }
 

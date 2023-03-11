@@ -1,3 +1,5 @@
+import 'package:inherited_widget/state/persist.dart';
+
 class CoreState {
   final int counter;
 
@@ -7,8 +9,13 @@ class CoreState {
 
   CoreState copy({
     int? counter,
-  }) =>
-      CoreState(
-        counter: counter ?? this.counter,
-      );
+  }) {
+    final CoreState state = CoreState(
+      counter: counter ?? this.counter,
+    );
+
+    Persist.save(state);
+
+    return state;
+  }
 }
